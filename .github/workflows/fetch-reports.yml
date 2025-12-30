@@ -12,6 +12,7 @@ permissions:
 jobs:
   fetch-reports:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     
     steps:
       - name: Checkout repository
@@ -25,13 +26,18 @@ jobs:
       - name: Install dependencies
         run: npm install
       
+      - name: Install Puppeteer browser
+        run: npx puppeteer browsers install chrome
+      
       - name: Fetch reports
         run: node scripts/fetch-reports.mjs
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: false
       
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add public/reports.json
-          git diff --staged --quiet || git commit -m "Update reports $(date +'%Y-%m-%d')"
+          git diff --staged --quiet || git commit -m "Update reports $(date +'%Y-%m-%d %H:%M')"
           git push
