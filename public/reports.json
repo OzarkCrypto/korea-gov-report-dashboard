@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-30T04:53:33.609Z",
+  "lastUpdated": "2025-12-30T05:13:03.187Z",
   "reports": {
     "한국은행": [],
     "기획재정부 (그린북)": [],
@@ -23,38 +23,81 @@
         "date": "2025-12-17"
       }
     ],
-    "한국금융연구원": [],
+    "한국금융연구원": [
+      {
+        "title": "Mail to ADMIN",
+        "url": "https://www.kif.re.kr/mailto:admin@kif.re.kr",
+        "date": ""
+      },
+      {
+        "title": "Mail to ADMIN",
+        "url": "https://www.kif.re.kr/mailto:admin@kif.re.kr",
+        "date": ""
+      }
+    ],
+    "자본시장연구원": [],
     "산업통상자원부": [],
     "산업연구원 (KIET)": [],
     "과학기술정보통신부": [],
     "정보통신기획평가원 (IITP)": [],
+    "소프트웨어정책연구소": [
+      {
+        "title": "< 메인으로 돌아가기",
+        "url": "https://spri.kr/",
+        "date": ""
+      }
+    ],
     "KOTRA": [],
     "한국무역협회 (KITA)": [],
     "대외경제정책연구원 (KIEP)": [],
     "관세청": [],
     "한국부동산원": [],
-    "국토교통부": [],
-    "한국전력거래소": [
+    "국토교통부": [
       {
-        "title": "임원추천위원회 운영규정 제9차 개정 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76504&tag=&nPage=1",
-        "date": "39"
+        "title": "외국인 비주택·토지 등 이상거래 기획조사 결과, 위법의심거래 88건 적발… 외국인 불법행위에 엄정 대응",
+        "url": "https://www.molit.go.kr/dtl.jsp?lcmspage=1&id=95091580",
+        "date": ""
       },
       {
-        "title": "한국전력거래소 정관 제20차 전문 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76503&tag=&nPage=1",
-        "date": "53"
+        "title": "안전한 운항환경 조성을 위한 「운수권배분규칙」 및 「항공사업법 시행규칙」 개정안… 30일부터 시행",
+        "url": "https://www.molit.go.kr/dtl.jsp?lcmspage=1&id=95091579",
+        "date": ""
       },
       {
-        "title": "직무권한규정 제20차 개정 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76486&tag=&nPage=1",
-        "date": "46"
+        "title": "“부르면 오는 버스”, 수요응답형교통(DRT) 가이드라인 배포",
+        "url": "https://www.molit.go.kr/dtl.jsp?lcmspage=1&id=95091578",
+        "date": ""
       }
     ],
+    "국토연구원": [],
+    "한국석유공사 (KNOC)": [],
+    "에너지경제연구원": [],
+    "한국전력거래소": [],
+    "한국광물자원공사": [],
     "식품의약품안전처": [],
     "건강보험심사평가원": [],
+    "한국자동차연구원": [],
+    "한국해양수산개발원 (KMI)": [],
+    "한국농촌경제연구원": [],
     "통계청 경제활동인구조사": [],
     "통계청 소비자물가": [],
-    "통계청 산업활동동향": []
+    "통계청 산업활동동향": [],
+    "공정거래위원회": [
+      {
+        "title": "「데이터와 경쟁」 정책보고서 발간",
+        "url": "https://www.ftc.go.kr/./selectBbsNttView.do?pageUnit=10&pageIndex=1&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&nttSn=46829",
+        "date": ""
+      },
+      {
+        "title": "2025년도 가맹 분야 실태조사 결과 발표",
+        "url": "https://www.ftc.go.kr/./selectBbsNttView.do?pageUnit=10&pageIndex=1&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&nttSn=46828",
+        "date": ""
+      },
+      {
+        "title": "과징금 제도개선 추진",
+        "url": "https://www.ftc.go.kr/./selectBbsNttView.do?pageUnit=10&pageIndex=1&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&nttSn=46827",
+        "date": ""
+      }
+    ]
   }
 }
