@@ -19,7 +19,7 @@
     "autoprefixer": "^10.4.19",
     "cheerio": "^1.0.0-rc.12",
     "postcss": "^8.4.38",
-    "rss-parser": "^3.13.0",
+    "puppeteer": "^21.6.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   }
