@@ -1,103 +1,53 @@
 {
-  "lastUpdated": "2025-12-30T05:13:03.187Z",
+  "lastUpdated": "2025-12-30T05:54:25.304Z",
   "reports": {
     "한국은행": [],
     "기획재정부 (그린북)": [],
     "금융위원회": [],
     "금융감독원": [],
     "한국개발연구원 (KDI)": [],
-    "국회예산정책처": [
-      {
-        "title": "사회적 포용성 제고를 위한 조세정책 개선과제(새글)",
-        "url": "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?funcSUB=view&bid=19&arg_cid1=0&arg_cid2=0&arg_class_id=0&currentPage=0&pageSize=10&currentPageSUB=0&pageSizeSUB=10&key_typeSUB=&keySUB=&search_start_dateSUB=&search_end_dateSUB=&department=0&department_sub=0&etc_cate1=&etc_cate2=&sortBy=reg_date&ascOrDesc=desc&search_key1=&etc_1=0&etc_2=0&tag_key=&arg_id=9026&item_id=9026&etc_1=0&etc_2=0&name2=0",
-        "date": "2025-12-23"
-      },
-      {
-        "title": "2025년 개정세법 심의 결과 및 주요 내용",
-        "url": "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?funcSUB=view&bid=19&arg_cid1=0&arg_cid2=0&arg_class_id=0&currentPage=0&pageSize=10&currentPageSUB=0&pageSizeSUB=10&key_typeSUB=&keySUB=&search_start_dateSUB=&search_end_dateSUB=&department=0&department_sub=0&etc_cate1=&etc_cate2=&sortBy=reg_date&ascOrDesc=desc&search_key1=&etc_1=0&etc_2=0&tag_key=&arg_id=9022&item_id=9022&etc_1=0&etc_2=0&name2=0",
-        "date": "2025-12-17"
-      },
-      {
-        "title": "2026년도 예산안 심의결과",
-        "url": "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?funcSUB=view&bid=19&arg_cid1=0&arg_cid2=0&arg_class_id=0&currentPage=0&pageSize=10&currentPageSUB=0&pageSizeSUB=10&key_typeSUB=&keySUB=&search_start_dateSUB=&search_end_dateSUB=&department=0&department_sub=0&etc_cate1=&etc_cate2=&sortBy=reg_date&ascOrDesc=desc&search_key1=&etc_1=0&etc_2=0&tag_key=&arg_id=9020&item_id=9020&etc_1=0&etc_2=0&name2=0",
-        "date": "2025-12-17"
-      }
-    ],
-    "한국금융연구원": [
-      {
-        "title": "Mail to ADMIN",
-        "url": "https://www.kif.re.kr/mailto:admin@kif.re.kr",
-        "date": ""
-      },
-      {
-        "title": "Mail to ADMIN",
-        "url": "https://www.kif.re.kr/mailto:admin@kif.re.kr",
-        "date": ""
-      }
-    ],
+    "국회예산정책처": [],
+    "한국금융연구원": [],
     "자본시장연구원": [],
     "산업통상자원부": [],
     "산업연구원 (KIET)": [],
     "과학기술정보통신부": [],
     "정보통신기획평가원 (IITP)": [],
-    "소프트웨어정책연구소": [
-      {
-        "title": "< 메인으로 돌아가기",
-        "url": "https://spri.kr/",
-        "date": ""
-      }
-    ],
+    "소프트웨어정책연구소": [],
     "KOTRA": [],
     "한국무역협회 (KITA)": [],
     "대외경제정책연구원 (KIEP)": [],
     "관세청": [],
     "한국부동산원": [],
-    "국토교통부": [
+    "국토교통부": [],
+    "한국건설산업연구원": [],
+    "한국석유공사 (KNOC)": [],
+    "에너지경제연구원": [],
+    "한국전력거래소": [
       {
-        "title": "외국인 비주택·토지 등 이상거래 기획조사 결과, 위법의심거래 88건 적발… 외국인 불법행위에 엄정 대응",
-        "url": "https://www.molit.go.kr/dtl.jsp?lcmspage=1&id=95091580",
+        "title": "임원추천위원회 운영규정 제9차 개정 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76504&tag=&nPage=1",
         "date": ""
       },
       {
-        "title": "안전한 운항환경 조성을 위한 「운수권배분규칙」 및 「항공사업법 시행규칙」 개정안… 30일부터 시행",
-        "url": "https://www.molit.go.kr/dtl.jsp?lcmspage=1&id=95091579",
+        "title": "한국전력거래소 정관 제20차 전문 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76503&tag=&nPage=1",
         "date": ""
       },
       {
-        "title": "“부르면 오는 버스”, 수요응답형교통(DRT) 가이드라인 배포",
-        "url": "https://www.molit.go.kr/dtl.jsp?lcmspage=1&id=95091578",
+        "title": "직무권한규정 제20차 개정 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76486&tag=&nPage=1",
         "date": ""
       }
     ],
-    "국토연구원": [],
-    "한국석유공사 (KNOC)": [],
-    "에너지경제연구원": [],
-    "한국전력거래소": [],
-    "한국광물자원공사": [],
+    "한국가스공사": [],
     "식품의약품안전처": [],
     "건강보험심사평가원": [],
     "한국자동차연구원": [],
     "한국해양수산개발원 (KMI)": [],
-    "한국농촌경제연구원": [],
     "통계청 경제활동인구조사": [],
     "통계청 소비자물가": [],
     "통계청 산업활동동향": [],
-    "공정거래위원회": [
-      {
-        "title": "「데이터와 경쟁」 정책보고서 발간",
-        "url": "https://www.ftc.go.kr/./selectBbsNttView.do?pageUnit=10&pageIndex=1&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&nttSn=46829",
-        "date": ""
-      },
-      {
-        "title": "2025년도 가맹 분야 실태조사 결과 발표",
-        "url": "https://www.ftc.go.kr/./selectBbsNttView.do?pageUnit=10&pageIndex=1&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&nttSn=46828",
-        "date": ""
-      },
-      {
-        "title": "과징금 제도개선 추진",
-        "url": "https://www.ftc.go.kr/./selectBbsNttView.do?pageUnit=10&pageIndex=1&searchCnd=all&key=12&bordCd=3&searchCtgry=01,02&nttSn=46827",
-        "date": ""
-      }
-    ]
+    "공정거래위원회": []
   }
 }
