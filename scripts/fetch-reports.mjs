@@ -1,320 +1,301 @@
-import Parser from 'rss-parser';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
 
-const parser = new Parser({
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-  },
-  timeout: 10000,
-});
-
-// 기관별 데이터 소스 정의
 const sources = {
-  // 거시경제·금융
   "한국은행": {
-    type: "rss",
-    url: "https://www.bok.or.kr/portal/bbs/B0000232/rss.do?menuNo=200761"
+    url: "https://www.bok.or.kr/portal/bbs/B0000232/list.do?menuNo=200761",
+    selector: ".bd-line tbody tr",
+    titleSel: "td.title a",
+    dateSel: "td:nth-child(5)",
+    baseUrl: "https://www.bok.or.kr"
   },
   "기획재정부 (그린북)": {
-    type: "scrape",
     url: "https://www.moef.go.kr/sn/economic/econEstimate",
-    selector: ".board_list tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td.title a, td:nth-child(2) a").text().trim(),
-      url: "https://www.moef.go.kr" + ($(el).find("td.title a, td:nth-child(2) a").attr("href") || ""),
-      date: $(el).find("td:last-child, td.date").text().trim()
-    })
+    selector: ".boardList tbody tr",
+    titleSel: "td.title a, td a.title",
+    dateSel: "td.date, td:nth-child(4)",
+    baseUrl: "https://www.moef.go.kr"
   },
   "금융위원회": {
-    type: "rss",
-    url: "https://www.fsc.go.kr/rss/no010101.do"
+    url: "https://www.fsc.go.kr/no010101",
+    selector: ".board_list tbody tr, .tb_list tbody tr",
+    titleSel: "td.title a, td a",
+    dateSel: "td.date, td:last-child",
+    baseUrl: "https://www.fsc.go.kr"
   },
   "금융감독원": {
-    type: "scrape",
-    url: "https://www.fss.or.kr/fss/kr/promo/bodobbs_list.jsp?id=PR0301",
-    selector: "#content table tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td.title a, td a").first().text().trim(),
-      url: "https://www.fss.or.kr" + ($(el).find("td.title a, td a").first().attr("href") || ""),
-      date: $(el).find("td").last().text().trim()
-    })
+    url: "https://www.fss.or.kr/fss/bbs/B0000188/list.do?menuNo=200218",
+    selector: ".bd-line tbody tr",
+    titleSel: "td.title a",
+    dateSel: "td:nth-child(4)",
+    baseUrl: "https://www.fss.or.kr"
   },
   "한국개발연구원 (KDI)": {
-    type: "scrape",
     url: "https://www.kdi.re.kr/research/reportList",
-    selector: ".research_list li, .list_wrap li",
-    parseItem: ($, el) => ({
-      title: $(el).find("a .tit, .title, a").first().text().trim(),
-      url: "https://www.kdi.re.kr" + ($(el).find("a").first().attr("href") || ""),
-      date: $(el).find(".date, .info span").first().text().trim()
-    })
+    selector: ".board_list li, .research-list li, .list-item",
+    titleSel: "a .tit, .title a, a",
+    dateSel: ".date, .info .date",
+    baseUrl: "https://www.kdi.re.kr"
   },
   "국회예산정책처": {
-    type: "scrape",
-    url: "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp",
-    selector: ".board_list tbody tr, table tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://www.nabo.go.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").eq(-1).text().trim()
-    })
+    url: "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?bid=19",
+    selector: "table tbody tr",
+    titleSel: "td a",
+    dateSel: "td:nth-child(4)",
+    baseUrl: "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp"
   },
-
-  // 산업·기술
+  "한국금융연구원": {
+    url: "https://www.kif.re.kr/kif3/publication/pub_list.aspx?menuid=12",
+    selector: ".board_list tbody tr, .list-body li",
+    titleSel: "a",
+    dateSel: ".date, td:last-child",
+    baseUrl: "https://www.kif.re.kr"
+  },
   "산업통상자원부": {
-    type: "rss",
-    url: "https://www.motie.go.kr/motie/rss/ne/presse/press1.do"
+    url: "https://www.motie.go.kr/motie/ne/presse/press1/bbs/bbsList.do?bbs_cd_n=16",
+    selector: ".board_list tbody tr",
+    titleSel: "td.title a",
+    dateSel: "td.date",
+    baseUrl: "https://www.motie.go.kr"
   },
   "산업연구원 (KIET)": {
-    type: "scrape",
     url: "https://www.kiet.re.kr/research/researchList",
-    selector: ".research_list li, .list_area li",
-    parseItem: ($, el) => ({
-      title: $(el).find(".tit, a").first().text().trim(),
-      url: "https://www.kiet.re.kr" + ($(el).find("a").first().attr("href") || ""),
-      date: $(el).find(".date, .info").first().text().trim()
-    })
+    selector: ".research_list li, .list-wrap li",
+    titleSel: ".tit a, a",
+    dateSel: ".date",
+    baseUrl: "https://www.kiet.re.kr"
   },
   "과학기술정보통신부": {
-    type: "rss", 
-    url: "https://www.msit.go.kr/rss/bbs_113.do"
+    url: "https://www.msit.go.kr/bbs/list.do?sCode=user&mId=113&mPid=112",
+    selector: ".board_list tbody tr",
+    titleSel: "td.title a",
+    dateSel: "td:nth-child(5)",
+    baseUrl: "https://www.msit.go.kr"
   },
   "정보통신기획평가원 (IITP)": {
-    type: "scrape",
-    url: "https://www.iitp.kr/kr/1/knowledge/publicationList.it",
+    url: "https://www.iitp.kr/kr/1/knowledge/publicationList.it?searchClassCode=CT01",
     selector: ".board_list tbody tr, table tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a, .title a").first().text().trim(),
-      url: ($(el).find("td a, .title a").first().attr("href") || "").startsWith("http") 
-        ? $(el).find("td a").first().attr("href") 
-        : "https://www.iitp.kr" + $(el).find("td a").first().attr("href"),
-      date: $(el).find("td").eq(-1).text().trim()
-    })
+    titleSel: "td a, .title a",
+    dateSel: "td:last-child",
+    baseUrl: "https://www.iitp.kr"
   },
-
-  // 무역·통상
   "KOTRA": {
-    type: "rss",
-    url: "https://dream.kotra.or.kr/kotranews/rss/news.do"
+    url: "https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardList.do?MENU_ID=280",
+    selector: ".board-list tbody tr, .news-list li",
+    titleSel: "td a, .tit a",
+    dateSel: ".date, td:nth-child(4)",
+    baseUrl: "https://dream.kotra.or.kr"
   },
   "한국무역협회 (KITA)": {
-    type: "scrape",
     url: "https://www.kita.net/cmmrcInfo/cmmrcNews/cmmrcNews/cmmrcNewsList.do",
-    selector: ".board_list tbody tr, .list_area li",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a, .tit a").first().text().trim(),
-      url: "https://www.kita.net" + ($(el).find("td a, .tit a").first().attr("href") || ""),
-      date: $(el).find("td.date, .date").first().text().trim()
-    })
+    selector: ".board_list tbody tr, .news-list li",
+    titleSel: "td a, .tit a",
+    dateSel: ".date, td.date",
+    baseUrl: "https://www.kita.net"
+  },
+  "대외경제정책연구원 (KIEP)": {
+    url: "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001",
+    selector: ".bd-list li, table tbody tr",
+    titleSel: "a",
+    dateSel: ".date, td:last-child",
+    baseUrl: "https://www.kiep.go.kr"
   },
   "관세청": {
-    type: "scrape",
     url: "https://www.customs.go.kr/kcs/na/ntt/selectNttList.do?mi=2889&bbsId=1362",
     selector: ".board_list tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://www.customs.go.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").eq(-2).text().trim()
-    })
+    titleSel: "td.title a, td a",
+    dateSel: "td.date, td:nth-child(5)",
+    baseUrl: "https://www.customs.go.kr"
   },
-
-  // 부동산·건설
   "한국부동산원": {
-    type: "scrape",
-    url: "https://www.reb.or.kr/r-one/portal/stat/pstatsList.do",
-    selector: ".board_list tbody tr, table tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://www.reb.or.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").last().text().trim()
-    })
+    url: "https://www.reb.or.kr/r-one/na/ntt/selectNttList.do?mi=10629&bbsId=1028",
+    selector: ".board_list tbody tr",
+    titleSel: "td.title a, td a",
+    dateSel: "td.date, td:nth-child(5)",
+    baseUrl: "https://www.reb.or.kr"
   },
   "국토교통부": {
-    type: "rss",
-    url: "https://www.molit.go.kr/rss/USR/NEWS/m_71.do"
-  },
-
-  // 에너지·원자재
-  "한국석유공사 (KNOC)": {
-    type: "scrape",
-    url: "https://www.knoc.co.kr/sub03/sub03_1_1.jsp",
+    url: "https://www.molit.go.kr/USR/NEWS/m_71/lst.jsp",
     selector: ".board_list tbody tr, table tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://www.knoc.co.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").last().text().trim()
-    })
-  },
-  "에너지경제연구원": {
-    type: "scrape",
-    url: "https://www.keei.re.kr/main.nsf/index.html?open&p=issue&s=list",
-    selector: ".board_list li, .list_area li",
-    parseItem: ($, el) => ({
-      title: $(el).find("a").first().text().trim(),
-      url: "https://www.keei.re.kr" + ($(el).find("a").first().attr("href") || ""),
-      date: $(el).find(".date").first().text().trim()
-    })
+    titleSel: "td a",
+    dateSel: "td:nth-child(5)",
+    baseUrl: "https://www.molit.go.kr"
   },
   "한국전력거래소": {
-    type: "scrape",
-    url: "https://www.kpx.or.kr/menu.es?mid=a10206010000",
+    url: "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033",
     selector: ".board_list tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://www.kpx.or.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").last().text().trim()
-    })
+    titleSel: "td.title a, td a",
+    dateSel: "td.date, td:nth-child(5)",
+    baseUrl: "https://www.kpx.or.kr"
   },
-
-  // 섹터별
   "식품의약품안전처": {
-    type: "rss",
-    url: "https://www.mfds.go.kr/rss/brd_m_99.do"
+    url: "https://www.mfds.go.kr/brd/m_99/list.do",
+    selector: ".board_list tbody tr",
+    titleSel: "td.title a, td a",
+    dateSel: "td:nth-child(5)",
+    baseUrl: "https://www.mfds.go.kr"
   },
-  "한국자동차연구원": {
-    type: "scrape",
-    url: "https://www.katech.re.kr/pub/reportList",
+  "건강보험심사평가원": {
+    url: "https://www.hira.or.kr/bbsDummy.do?pgmid=HIRAA020041000000",
     selector: ".board_list tbody tr, table tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://www.katech.re.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").last().text().trim()
-    })
+    titleSel: "td a",
+    dateSel: "td:nth-child(4)",
+    baseUrl: "https://www.hira.or.kr"
   },
-
-  // 통계·데이터
   "통계청 경제활동인구조사": {
-    type: "scrape",
     url: "https://kostat.go.kr/board.es?mid=a10301010000&bid=210",
     selector: ".board_list tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://kostat.go.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").eq(-2).text().trim()
-    })
+    titleSel: "td.title a, td a",
+    dateSel: "td:nth-child(4)",
+    baseUrl: "https://kostat.go.kr"
   },
   "통계청 소비자물가": {
-    type: "scrape", 
     url: "https://kostat.go.kr/board.es?mid=a10301020000&bid=211",
     selector: ".board_list tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://kostat.go.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").eq(-2).text().trim()
-    })
+    titleSel: "td.title a, td a",
+    dateSel: "td:nth-child(4)",
+    baseUrl: "https://kostat.go.kr"
   },
   "통계청 산업활동동향": {
-    type: "scrape",
     url: "https://kostat.go.kr/board.es?mid=a10301060000&bid=215",
     selector: ".board_list tbody tr",
-    parseItem: ($, el) => ({
-      title: $(el).find("td a").first().text().trim(),
-      url: "https://kostat.go.kr" + ($(el).find("td a").first().attr("href") || ""),
-      date: $(el).find("td").eq(-2).text().trim()
-    })
+    titleSel: "td.title a, td a",
+    dateSel: "td:nth-child(4)",
+    baseUrl: "https://kostat.go.kr"
   },
 };
 
-async function fetchRSS(url) {
-  try {
-    const feed = await parser.parseURL(url);
-    return feed.items.slice(0, 3).map(item => ({
-      title: item.title || "",
-      url: item.link || "",
-      date: item.pubDate ? new Date(item.pubDate).toLocaleDateString('ko-KR') : ""
-    }));
-  } catch (error) {
-    console.error(`RSS fetch error for ${url}:`, error.message);
-    return [];
+async function fetchWithRetry(url, retries = 2) {
+  for (let i = 0; i <= retries; i++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+        },
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeout);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.text();
+    } catch (error) {
+      if (i === retries) throw error;
+      await new Promise(r => setTimeout(r, 1000 * (i + 1)));
+    }
   }
 }
 
-async function fetchScrape(config) {
+async function scrapeSource(name, config) {
   try {
-    const response = await fetch(config.url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
-      },
-      timeout: 10000,
-    });
-    
-    const html = await response.text();
+    console.log(`  Fetching: ${config.url.slice(0, 60)}...`);
+    const html = await fetchWithRetry(config.url);
     const $ = cheerio.load(html);
     
     const items = [];
-    $(config.selector).each((i, el) => {
-      if (i >= 3) return false;
-      const item = config.parseItem($, el);
-      if (item.title && item.title.length > 0) {
-        items.push(item);
-      }
-    });
+    const selectors = config.selector.split(',').map(s => s.trim());
     
-    return items;
+    for (const selector of selectors) {
+      $(selector).each((i, el) => {
+        if (items.length >= 3) return false;
+        
+        const titleSelectors = config.titleSel.split(',').map(s => s.trim());
+        let title = '';
+        let href = '';
+        
+        for (const ts of titleSelectors) {
+          const titleEl = $(el).find(ts).first();
+          if (titleEl.length) {
+            title = titleEl.text().trim().replace(/\s+/g, ' ');
+            href = titleEl.attr('href') || '';
+            if (title && title.length > 3) break;
+          }
+        }
+        
+        const dateSelectors = config.dateSel.split(',').map(s => s.trim());
+        let date = '';
+        
+        for (const ds of dateSelectors) {
+          const dateEl = $(el).find(ds).first();
+          if (dateEl.length) {
+            date = dateEl.text().trim();
+            const dateMatch = date.match(/\d{4}[.-]\d{2}[.-]\d{2}|\d{2}[.-]\d{2}[.-]\d{2}/);
+            if (dateMatch) {
+              date = dateMatch[0];
+              break;
+            }
+          }
+        }
+        
+        let url = href;
+        if (href && !href.startsWith('http')) {
+          if (href.startsWith('/')) {
+            const base = new URL(config.baseUrl);
+            url = base.origin + href;
+          } else {
+            url = config.baseUrl + '/' + href;
+          }
+        }
+        
+        if (title && title.length > 3 && !title.includes('등록된') && !title.includes('없습니다')) {
+          items.push({ title, url: url || config.url, date });
+        }
+      });
+      
+      if (items.length > 0) break;
+    }
+    
+    return items.slice(0, 3);
   } catch (error) {
-    console.error(`Scrape error for ${config.url}:`, error.message);
+    console.error(`  Error: ${error.message}`);
     return [];
   }
 }
 
-async function fetchAllReports() {
+async function main() {
+  console.log("=".repeat(50));
+  console.log("정부기관 보고서 수집");
+  console.log("시간:", new Date().toISOString());
+  console.log("=".repeat(50));
+  
   const results = {};
-  const entries = Object.entries(sources);
+  let successCount = 0;
   
-  console.log(`Fetching reports from ${entries.length} sources...`);
-  
-  for (const [name, config] of entries) {
-    console.log(`Fetching: ${name}`);
+  for (const [name, config] of Object.entries(sources)) {
+    console.log(`\n[${name}]`);
     
-    try {
-      if (config.type === "rss") {
-        results[name] = await fetchRSS(config.url);
-      } else {
-        results[name] = await fetchScrape(config);
-      }
-      
-      console.log(`  ✓ ${results[name].length} items`);
-    } catch (error) {
-      console.error(`  ✗ Error: ${error.message}`);
-      results[name] = [];
+    const items = await scrapeSource(name, config);
+    results[name] = items;
+    
+    if (items.length > 0) {
+      console.log(`  ✓ ${items.length}개 수집`);
+      successCount++;
+    } else {
+      console.log(`  ✗ 실패`);
     }
     
-    // Rate limiting
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(r => setTimeout(r, 800));
   }
-  
-  return results;
-}
-
-async function main() {
-  console.log("Starting report fetch...");
-  console.log("Time:", new Date().toISOString());
-  
-  const reports = await fetchAllReports();
   
   const output = {
     lastUpdated: new Date().toISOString(),
-    reports: reports
+    reports: results
   };
   
-  // Save to public folder
   const publicDir = path.join(process.cwd(), 'public');
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
   }
   
-  const outputPath = path.join(publicDir, 'reports.json');
-  fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(publicDir, 'reports.json'), JSON.stringify(output, null, 2));
   
-  console.log(`\nSaved to ${outputPath}`);
-  console.log(`Total sources: ${Object.keys(reports).length}`);
-  
-  const successCount = Object.values(reports).filter(r => r.length > 0).length;
-  console.log(`Successful: ${successCount}`);
+  console.log("\n" + "=".repeat(50));
+  console.log(`완료: ${successCount}/${Object.keys(sources).length} 성공`);
 }
 
 main().catch(console.error);
