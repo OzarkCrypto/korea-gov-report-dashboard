@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-30T05:54:25.304Z",
+  "lastUpdated": "2025-12-31T02:11:15.368Z",
   "reports": {
     "한국은행": [],
     "기획재정부 (그린북)": [],
@@ -25,6 +25,11 @@
     "에너지경제연구원": [],
     "한국전력거래소": [
       {
+        "title": "새글 직제규정 제62차 개정 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76547&tag=&nPage=1",
+        "date": ""
+      },
+      {
         "title": "임원추천위원회 운영규정 제9차 개정 공포",
         "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76504&tag=&nPage=1",
         "date": ""
@@ -32,11 +37,6 @@
       {
         "title": "한국전력거래소 정관 제20차 전문 공포",
         "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76503&tag=&nPage=1",
-        "date": ""
-      },
-      {
-        "title": "직무권한규정 제20차 개정 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76486&tag=&nPage=1",
         "date": ""
       }
     ],
