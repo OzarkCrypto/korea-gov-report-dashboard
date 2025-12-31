@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-31T03:00:24.081Z",
+  "lastUpdated": "2025-12-31T03:20:41.775Z",
   "reports": {
     "국회예산정책처": [
       {
@@ -18,64 +18,37 @@
         "date": ""
       }
     ],
-    "한국전력거래소": [
-      {
-        "title": "직제규정 제62차 개정 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76547&tag=&nPage=1",
-        "date": "8"
-      },
-      {
-        "title": "임원추천위원회 운영규정 제9차 개정 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76504&tag=&nPage=1",
-        "date": "42"
-      },
-      {
-        "title": "한국전력거래소 정관 제20차 전문 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76503&tag=&nPage=1",
-        "date": "56"
-      }
-    ],
+    "한국전력거래소": [],
     "한국은행": [],
     "한국개발연구원 (KDI)": [],
+    "금융감독원": [],
     "통계청 경제활동인구조사": [],
     "통계청 소비자물가": [],
-    "통계청 산업활동동향": [],
-    "금융감독원": [
+    "대외경제정책연구원 (KIEP)": [
       {
-        "title": "'25년 3분기 중 증권회사 파생결합증권 발행 운용 현황",
-        "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=208510&menuNo=200218&pageIndex=1",
-        "date": "등록일\n\t\t\t\t\t\t2025-12-31"
+        "title": "공급망 분절화의 경제적 영향 분석방법론 연구: 핵심광물에 대한 적용",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=11836&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
       },
       {
-        "title": "2025년 상반기 대부업 실태조사 결과",
-        "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=208485&menuNo=200218&pageIndex=1",
-        "date": "등록일\n\t\t\t\t\t\t2025-12-30"
+        "title": "일본의 노동력 부족 대응 전략과 시사점",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12127&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
       },
       {
-        "title": "추정실적 기반 공모가 산정실태 점검 및 향후대응",
-        "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=208484&menuNo=200218&pageIndex=1",
-        "date": "등록일\n\t\t\t\t\t\t2025-12-30"
+        "title": "AI Risk and Public Debt in the APEC Economies",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12153&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
       }
     ],
-    "대외경제정책연구원 (KIEP)": [],
-    "한국금융연구원": [],
     "산업연구원 (KIET)": [],
-    "에너지경제연구원": [
+    "한국금융연구원": [
       {
-        "title": "세계 에너지시장 인사이트",
-        "url": "https://www.keei.re.kr/menu.es?mid=a10103020000",
-        "date": ""
-      },
-      {
-        "title": "세계 에너지시장 인사이트",
-        "url": "https://www.keei.re.kr/menu.es?mid=a10103010000",
-        "date": ""
-      },
-      {
-        "title": "세계 에너지시장 인사이트",
-        "url": "https://www.keei.re.kr/menu.es?mid=a10103010000",
-        "date": ""
+        "title": "Mail to ADMIN",
+        "url": "https://www.kif.re.krmailto:admin@kif.re.kr",
+        "date": "♣ 서비스 일시 중지\n\n\n\n\n\n\n\n\n\n\n\n시스템 오류 또는 점검으로 인해 일시적으로 서비스를 이용하실 수 없습니다. 문의사항이 있으시면 아래의 연락처로 문의하여 주시기 바랍니다. 감사합니다.\n\n연락처 : 한국금융연구원 (3705-6300)\n\n\n\n\n\n\n\n\n\n\n\nMail to ADMIN"
       }
-    ]
+    ],
+    "자본시장연구원": []
   }
 }
