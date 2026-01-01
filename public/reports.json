@@ -1,24 +1,19 @@
 {
-  "lastUpdated": "2025-12-31T03:20:41.775Z",
+  "lastUpdated": "2026-01-01T02:12:39.263Z",
   "reports": {
-    "국회예산정책처": [
+    "국회예산정책처": [],
+    "한국전력거래소": [
       {
-        "title": "사회적 포용성 제고를 위한 조세정책 개선과제",
-        "url": "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?funcSUB=view&bid=19&arg_cid1=0&arg_cid2=0&arg_class_id=0&currentPage=0&pageSize=10&currentPageSUB=0&pageSizeSUB=10&key_typeSUB=&keySUB=&search_start_dateSUB=&search_end_dateSUB=&department=0&department_sub=0&etc_cate1=&etc_cate2=&sortBy=reg_date&ascOrDesc=desc&search_key1=&etc_1=0&etc_2=0&tag_key=&arg_id=9026&item_id=9026&etc_1=0&etc_2=0&name2=0",
+        "title": "직제규정 제62차 개정 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76547&tag=&nPage=1",
         "date": ""
       },
       {
-        "title": "2025년 개정세법 심의 결과 및 주요 내용",
-        "url": "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?funcSUB=view&bid=19&arg_cid1=0&arg_cid2=0&arg_class_id=0&currentPage=0&pageSize=10&currentPageSUB=0&pageSizeSUB=10&key_typeSUB=&keySUB=&search_start_dateSUB=&search_end_dateSUB=&department=0&department_sub=0&etc_cate1=&etc_cate2=&sortBy=reg_date&ascOrDesc=desc&search_key1=&etc_1=0&etc_2=0&tag_key=&arg_id=9022&item_id=9022&etc_1=0&etc_2=0&name2=0",
-        "date": ""
-      },
-      {
-        "title": "2026년도 예산안 심의결과",
-        "url": "https://www.nabo.go.kr/Sub/01Report/01_01_Board.jsp?funcSUB=view&bid=19&arg_cid1=0&arg_cid2=0&arg_class_id=0&currentPage=0&pageSize=10&currentPageSUB=0&pageSizeSUB=10&key_typeSUB=&keySUB=&search_start_dateSUB=&search_end_dateSUB=&department=0&department_sub=0&etc_cate1=&etc_cate2=&sortBy=reg_date&ascOrDesc=desc&search_key1=&etc_1=0&etc_2=0&tag_key=&arg_id=9020&item_id=9020&etc_1=0&etc_2=0&name2=0",
+        "title": "임원추천위원회 운영규정 제9차 개정 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=76504&tag=&nPage=1",
         "date": ""
       }
     ],
-    "한국전력거래소": [],
     "한국은행": [],
     "한국개발연구원 (KDI)": [],
     "금융감독원": [],
