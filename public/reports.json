@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-25T02:37:56.157Z",
+  "lastUpdated": "2026-03-28T02:37:00.352Z",
   "reports": {
     "국회예산정책처": [],
     "한국전력거래소": [],
@@ -10,6 +10,11 @@
     "통계청 소비자물가": [],
     "대외경제정책연구원 (KIEP)": [
       {
+        "title": "한국기업의 중동부유럽 진출 성과와 과제",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12307&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
+      },
+      {
         "title": "유럽 방위산업 강화 전략과 한-EU 협력방안",
         "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12288&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
         "date": ""
@@ -17,11 +22,6 @@
       {
         "title": "지속가능한 소버린 AI 확보전략을 위한 정책연구",
         "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12285&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
-        "date": ""
-      },
-      {
-        "title": "브라질 내수시장의 특징과 정책적 시사점: 비공식 경제를 중심으로",
-        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12277&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
         "date": ""
       }
     ],
