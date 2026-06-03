@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-31T04:13:11.866Z",
+  "lastUpdated": "2026-06-03T04:32:32.130Z",
   "reports": {
     "국회예산정책처": [],
     "한국전력거래소": [],
@@ -10,6 +10,11 @@
     "통계청 소비자물가": [],
     "대외경제정책연구원 (KIEP)": [
       {
+        "title": "USMCA 자동차 원산지 규정의 이행 현황과 시사점",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12442&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
+      },
+      {
         "title": "사우디아라비아와 UAE의 AI 산업 전략과 정책 시사점",
         "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12392&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
         "date": ""
@@ -17,11 +22,6 @@
       {
         "title": "한국기업의 중동부유럽 진출 성과와 과제",
         "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12307&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
-        "date": ""
-      },
-      {
-        "title": "유럽 방위산업 강화 전략과 한-EU 협력방안",
-        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12288&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
         "date": ""
       }
     ],
