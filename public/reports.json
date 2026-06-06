@@ -1,30 +1,30 @@
 {
-  "lastUpdated": "2026-06-03T04:32:32.130Z",
+  "lastUpdated": "2026-06-06T03:51:42.418Z",
   "reports": {
     "국회예산정책처": [],
-    "한국전력거래소": [],
+    "한국전력거래소": [
+      {
+        "title": "직제규정 제64차 개정 전문 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77492&tag=&nPage=1",
+        "date": ""
+      },
+      {
+        "title": "당직근무요령 제7차 개정 전문 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77474&tag=&nPage=1",
+        "date": ""
+      },
+      {
+        "title": "인사관리규정 제48차 개정 전문 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77473&tag=&nPage=1",
+        "date": ""
+      }
+    ],
     "한국은행": [],
     "한국개발연구원 (KDI)": [],
     "금융감독원": [],
     "통계청 경제활동인구조사": [],
     "통계청 소비자물가": [],
-    "대외경제정책연구원 (KIEP)": [
-      {
-        "title": "USMCA 자동차 원산지 규정의 이행 현황과 시사점",
-        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12442&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
-        "date": ""
-      },
-      {
-        "title": "사우디아라비아와 UAE의 AI 산업 전략과 정책 시사점",
-        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12392&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
-        "date": ""
-      },
-      {
-        "title": "한국기업의 중동부유럽 진출 성과와 과제",
-        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12307&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
-        "date": ""
-      }
-    ],
+    "대외경제정책연구원 (KIEP)": [],
     "산업연구원 (KIET)": [],
     "한국금융연구원": [
       {
