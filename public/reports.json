@@ -1,8 +1,13 @@
 {
-  "lastUpdated": "2026-07-14T02:49:48.681Z",
+  "lastUpdated": "2026-07-16T02:54:36.276Z",
   "reports": {
     "국회예산정책처": [],
     "한국전력거래소": [
+      {
+        "title": "직제규정 제65차 개정 전문 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77756&tag=&nPage=1",
+        "date": ""
+      },
       {
         "title": "상임임원 복무규정 제정",
         "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77681&tag=&nPage=1",
@@ -11,11 +16,6 @@
       {
         "title": "계약규정 제18차 개정 전문 공포",
         "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77670&tag=&nPage=1",
-        "date": ""
-      },
-      {
-        "title": "연구개발관리규정 제22차 개정 전문 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77552&tag=&nPage=1",
         "date": ""
       }
     ],
