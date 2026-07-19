@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-18T02:50:20.717Z",
+  "lastUpdated": "2026-07-19T03:03:58.189Z",
   "reports": {
     "국회예산정책처": [],
     "한국전력거래소": [
@@ -24,7 +24,23 @@
     "금융감독원": [],
     "통계청 경제활동인구조사": [],
     "통계청 소비자물가": [],
-    "대외경제정책연구원 (KIEP)": [],
+    "대외경제정책연구원 (KIEP)": [
+      {
+        "title": "미중 무역 전쟁과 다차원적 복합게임: 중국의 대미 전략을 중심으로",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12446&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
+      },
+      {
+        "title": "USMCA 자동차 원산지 규정의 이행 현황과 시사점",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12442&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
+      },
+      {
+        "title": "사우디아라비아와 UAE의 AI 산업 전략과 정책 시사점",
+        "url": "https://www.kiep.go.kr/gallery.es?mid=a10101010000&bid=0001&tag=&b_list=10&act=view&list_no=12392&nPage=1&vlist_no_npage=0&keyField=&keyWord=&orderby=",
+        "date": ""
+      }
+    ],
     "산업연구원 (KIET)": [],
     "한국금융연구원": [
       {
