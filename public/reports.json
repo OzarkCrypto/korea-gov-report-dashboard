@@ -1,8 +1,13 @@
 {
-  "lastUpdated": "2026-10-01T04:58:01.440Z",
+  "lastUpdated": "2026-10-02T04:47:42.010Z",
   "reports": {
     "국회예산정책처": [],
     "한국전력거래소": [
+      {
+        "title": "취업규칙 제29차 개정 전문 공포",
+        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=78223&tag=&nPage=1",
+        "date": ""
+      },
       {
         "title": "취업규칙 제28차 개정 전문 공포",
         "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77972&tag=&nPage=1",
@@ -11,11 +16,6 @@
       {
         "title": "공무직관리규정 제11차 개정 전문 공포",
         "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77917&tag=&nPage=1",
-        "date": ""
-      },
-      {
-        "title": "직원연봉규정시행세칙 제25차 개정 전문 공포",
-        "url": "https://www.kpx.or.kr/board.es?mid=a10206010000&bid=0033&act=view&list_no=77916&tag=&nPage=1",
         "date": ""
       }
     ],
