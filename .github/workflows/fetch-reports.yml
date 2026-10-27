@@ -12,6 +12,8 @@ permissions:
 jobs:
   fetch-reports:
     runs-on: ubuntu-latest
+    # 정상 실행 7~15분(중앙 8.6분). npm install 이 멈추면 기본 6시간을 다 쓰던 것을 25분에서 끊는다
+    timeout-minutes: 25
     
     steps:
       - name: Checkout repository
